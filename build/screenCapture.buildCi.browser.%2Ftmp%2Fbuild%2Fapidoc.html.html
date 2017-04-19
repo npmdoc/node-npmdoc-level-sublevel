@@ -1,0 +1,451 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/dominictarr/level-sublevel">level-sublevel (v6.6.1)</a>
+</h1>
+<h4>partition levelup databases</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.level-sublevel">module level-sublevel</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.level-sublevel.level-sublevel">
+            function <span class="apidocSignatureSpan"></span>level-sublevel
+            <span class="apidocSignatureSpan">(db, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.level-sublevel.batch">
+            function <span class="apidocSignatureSpan">level-sublevel.</span>batch
+            <span class="apidocSignatureSpan">(sdb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.level-sublevel.range">
+            function <span class="apidocSignatureSpan">level-sublevel.</span>range
+            <span class="apidocSignatureSpan">(range, key, _compare)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">level-sublevel.</span>batch.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.level-sublevel.batch">module level-sublevel.batch</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.level-sublevel.batch.batch">
+            function <span class="apidocSignatureSpan">level-sublevel.</span>batch
+            <span class="apidocSignatureSpan">(sdb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.level-sublevel.batch.prototype">module level-sublevel.batch.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.level-sublevel.batch.prototype.clear">
+            function <span class="apidocSignatureSpan">level-sublevel.batch.prototype.</span>clear
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.level-sublevel.batch.prototype.write">
+            function <span class="apidocSignatureSpan">level-sublevel.batch.prototype.</span>write
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.level-sublevel.range">module level-sublevel.range</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.level-sublevel.range.range">
+            function <span class="apidocSignatureSpan">level-sublevel.</span>range
+            <span class="apidocSignatureSpan">(range, key, _compare)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.level-sublevel.range.addPrefix">
+            function <span class="apidocSignatureSpan">level-sublevel.range.</span>addPrefix
+            <span class="apidocSignatureSpan">(prefix, range)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.level-sublevel.range.compare">
+            function <span class="apidocSignatureSpan">level-sublevel.range.</span>compare
+            <span class="apidocSignatureSpan">(a, b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.level-sublevel.range.prefix">
+            function <span class="apidocSignatureSpan">level-sublevel.range.</span>prefix
+            <span class="apidocSignatureSpan">(a, b)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.level-sublevel" id="apidoc.module.level-sublevel">module level-sublevel</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.level-sublevel.level-sublevel" id="apidoc.element.level-sublevel.level-sublevel">
+        function <span class="apidocSignatureSpan"></span>level-sublevel
+        <span class="apidocSignatureSpan">(db, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">level-sublevel = function (db, opts) {
+  if (typeof db.sublevel === 'function' &amp;&amp; typeof db.clone === 'function') return db.clone(opts)
+  return sublevel(db, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.level-sublevel.batch" id="apidoc.element.level-sublevel.batch">
+        function <span class="apidocSignatureSpan">level-sublevel.</span>batch
+        <span class="apidocSignatureSpan">(sdb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Batch(sdb) {
+  this._operations = []
+  this._sdb = sdb
+
+  this.put = addOperation.bind(this, 'put')
+  this.del = addOperation.bind(this, 'del')
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if set, this row will be inserted into that database section,
+instead of the current section, similar to the `pre` hook above.
+
+``` js
+var sub1 = db.sublevel('SUB_1')
+var sub2 = db.sublevel('SUM_2')
+
+sub.<span class="apidocCodeKeywordSpan">batch</span>([
+  {key: 'key', value: 'Value', type: 'put'},
+  {key: 'key', value: 'Value', type: 'put', prefix: sub2},
+], function (err) {...})
+```
+
+## License
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.level-sublevel.range" id="apidoc.element.level-sublevel.range">
+        function <span class="apidocSignatureSpan">level-sublevel.</span>range
+        <span class="apidocSignatureSpan">(range, key, _compare)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">range = function (range, key, _compare) {
+  _compare = _compare || compare
+  //handle prefix specially,
+  //check that everything up to the last item is equal
+  //then check the last item starts with
+  if(isArrayLike(range)) return prefix(range, key)
+
+  return ltgt.contains(range, key, _compare)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.level-sublevel.batch" id="apidoc.module.level-sublevel.batch">module level-sublevel.batch</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.level-sublevel.batch.batch" id="apidoc.element.level-sublevel.batch.batch">
+        function <span class="apidocSignatureSpan">level-sublevel.</span>batch
+        <span class="apidocSignatureSpan">(sdb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Batch(sdb) {
+  this._operations = []
+  this._sdb = sdb
+
+  this.put = addOperation.bind(this, 'put')
+  this.del = addOperation.bind(this, 'del')
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if set, this row will be inserted into that database section,
+instead of the current section, similar to the `pre` hook above.
+
+``` js
+var sub1 = db.sublevel('SUB_1')
+var sub2 = db.sublevel('SUM_2')
+
+sub.<span class="apidocCodeKeywordSpan">batch</span>([
+  {key: 'key', value: 'Value', type: 'put'},
+  {key: 'key', value: 'Value', type: 'put', prefix: sub2},
+], function (err) {...})
+```
+
+## License
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.level-sublevel.batch.prototype" id="apidoc.module.level-sublevel.batch.prototype">module level-sublevel.batch.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.level-sublevel.batch.prototype.clear" id="apidoc.element.level-sublevel.batch.prototype.clear">
+        function <span class="apidocSignatureSpan">level-sublevel.batch.prototype.</span>clear
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clear = function () {
+  this._operations = []
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.level-sublevel.batch.prototype.write" id="apidoc.element.level-sublevel.batch.prototype.write">
+        function <span class="apidocSignatureSpan">level-sublevel.batch.prototype.</span>write
+        <span class="apidocSignatureSpan">(cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write = function (cb) {
+  this._sdb.batch(this._operations, cb)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.level-sublevel.range" id="apidoc.module.level-sublevel.range">module level-sublevel.range</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.level-sublevel.range.range" id="apidoc.element.level-sublevel.range.range">
+        function <span class="apidocSignatureSpan">level-sublevel.</span>range
+        <span class="apidocSignatureSpan">(range, key, _compare)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">range = function (range, key, _compare) {
+  _compare = _compare || compare
+  //handle prefix specially,
+  //check that everything up to the last item is equal
+  //then check the last item starts with
+  if(isArrayLike(range)) return prefix(range, key)
+
+  return ltgt.contains(range, key, _compare)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.level-sublevel.range.addPrefix" id="apidoc.element.level-sublevel.range.addPrefix">
+        function <span class="apidocSignatureSpan">level-sublevel.range.</span>addPrefix
+        <span class="apidocSignatureSpan">(prefix, range)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function addPrefix(prefix, range) {
+  var o = ltgt.toLtgt(range, null, function (key) {
+    return [prefix, key]
+  })
+
+  //if there where no ranges, then then just use a prefix.
+  if(!has(o, 'gte') &amp;&amp; !has(o, 'lte')) return [prefix]
+
+  return o
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.level-sublevel.range.compare" id="apidoc.element.level-sublevel.range.compare">
+        function <span class="apidocSignatureSpan">level-sublevel.range.</span>compare
+        <span class="apidocSignatureSpan">(a, b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function compare(a, b) {
+  if(isArrayLike(a) &amp;&amp; isArrayLike(b)) {
+    var l = Math.min(a.length, b.length)
+    for(var i = 0; i &lt; l; i++) {
+      var c = compare(a[i], b[i])
+      if(c) return c
+    }
+    return a.length - b.length
+  }
+  if(isPrimitive(a) &amp;&amp; isPrimitive(b))
+    return a &lt; b ? -1 : a &gt; b ? 1 : 0
+
+  throw new Error('items not comparable:'
+    + JSON.stringify(a) + ' ' + JSON.stringify(b))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.level-sublevel.range.prefix" id="apidoc.element.level-sublevel.range.prefix">
+        function <span class="apidocSignatureSpan">level-sublevel.range.</span>prefix
+        <span class="apidocSignatureSpan">(a, b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function prefix(a, b) {
+  if(a.length &gt; b.length) return false
+  var l = a.length - 1
+  var lastA = a[l]
+  var lastB = b[l]
+
+  if(typeof lastA !== typeof lastB)
+    return false
+
+  if('string' == typeof lastA
+    &amp;&amp; 0 != lastB.indexOf(lastA))
+      return false
+
+  //handle cas where there is no key prefix
+  //(a hook on an entire sublevel)
+  if(a.length == 1 &amp;&amp; isArrayLike(lastA)) l ++
+
+  while(l--) {
+    if(compare(a[l], b[l])) return false
+  }
+  return true
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+function isFunction (f) {
+  return 'function' === typeof f
+}
+
+function getPrefix (db) {
+  if(db == null) return db
+  if(isFunction(db.prefix)) return db.<span class="apidocCodeKeywordSpan">prefix</span>()
+  return db
+}
+
+function has(obj, name) {
+  return Object.hasOwnProperty.call(obj, name)
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
